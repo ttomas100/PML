@@ -57,22 +57,27 @@ $.ajax({
     var image = $("<img>").attr("src", albumImage);
   
     
-   prevBody.append(artistToAppend,image, audioControl, idToAppend, saveButton);
+   prevBody.append(artistToAppend,image, audioControl, saveButton);
    card.append(prevBody);
    $("#preview-section").append(card);
   });
 }
 };
 function saveSong (id){
-  //Create an ajax POST
-  //Add the id in the body
-  //Make the request
-  //Make sure that the user is send
+  $.post( "/api/saveSong", {
+    musicId : id,
+    email: document.getElementsByClassName("member-name")[0].innerHTML
+  })
+  .then(function(data) {
+    console.log("ok")
+   })
+  .catch(function(err){
+    console.log("error")
+  });
+};
 
-  //NODE EXPRESS:
-  //Get the id from the requestbody
-  //save in the database
-}
+
+
 function clearData(){
   var queryURL= "https://api.deezer.com/search?q=" + filter;
 
@@ -89,3 +94,6 @@ event.preventDefault();
 
   $( "#preview-section" ).empty();
 });
+
+// function getSongs (){
+//   var queryURL= "https://api.deezer.com/track/" + here goes the get (Id) from the database; 

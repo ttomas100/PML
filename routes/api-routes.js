@@ -26,6 +26,39 @@ module.exports = function(app) {
       });
   });
 
+  app.get("/api/saveSong", function(req, res) {
+
+    db.Music.findAll({}).then(function(dbMusic) {
+  
+      res.json(dbMusic);
+    });
+  });
+
+  app.post("/api/saveSong", function(req, res){
+    console.log(req.user);
+    if (!req.user) {
+ 
+      res.json({});
+    } else {
+      db.Music.create({
+      email: req.body.email,
+      musicId: req.body.musicId
+    })
+      .then(function() {
+        res.json( {
+          email: req.user.email,
+          id: req.user.id
+        }
+        );
+      })
+      .catch(function(err) {
+        console.log("error");
+        res.status(401).json(err);
+      });
+    }
+  });
+
+
   // Route for logging user out
   app.get("/logout", function(req, res) {
     req.logout();
@@ -46,4 +79,5 @@ module.exports = function(app) {
       });
     }
   });
+
 };

@@ -29,49 +29,31 @@
       </a>
     </div>
   </div>
-  
 </nav>
   <div class="container">
     <div class="row">
       <div class="col-md-6 col-md-offset-3">
-        <h2>Welcome <span class="member-name"></span></h2>
+        <h2>Welcome <span id="member" class="member-name"></span></h2>
       </div>
     </div>
   </div>
 
-  <div class="container">
-        
-    <div class="row">
-      <div class="input-field col s6">
-       
-        <label class="active" for="search-term">ENJOY YOUR MUSIC</label>
-      </div>
-    </div>
-    
-    <button id="searchBtn" class="btn indigo darken-4 waves-effect waves-light" type="Search-music" name="action" >Search Music</button>
-    
-    <script type="text/javascript">
-      document.getElementById("searchBtn").onclick = function () {
-          location.href = "search.html";
-      };
-    </script>
-
-    <button id="profileBtn" class="btn indigo darken-4 waves-effect waves-light" type="Search-music" name="action">My Profile
-
-      <script type="text/javascript">
-        document.getElementById("profileBtn").onclick = function () {
-            location.href = "myProfile.html";
-        };
-      </script>
-    </button>
-    
-
-   
 </div>
+<div class="container">
+            <div class="row">
+                <div id = "previewMusic" class="col s12 hide"><p>This are your previews</p></div>
+            </div>
+          
+      </div>
+      <div class="card-body" id="preview-section">
+          
+    </div>
+
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 <script src = "https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+<script type="text/javascript" src="js/createProfile.js"></script>
 <script type="text/javascript" src="js/members.js"></script>
 
 </body>
