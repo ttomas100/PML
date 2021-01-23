@@ -27,9 +27,8 @@ module.exports = function(app) {
   });
 
   app.get("/api/saveSong", function(req, res) {
-
+    // 1. Add a join to include all of each Author's Posts
     db.Music.findAll({}).then(function(dbMusic) {
-  
       res.json(dbMusic);
     });
   });

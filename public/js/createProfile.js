@@ -1,10 +1,16 @@
+$(document).ready(function() {
 
-
-function getTrack(){
-    if (email = document.getElementsByClassName("member-name")[0].innerHTML){
-
-    }
-};
+    $.get("/api/saveSong").then(function(data) {
+      for (var i = 0; i < data.length; i++){
+        console.log(data[i].email);
+   
+        }
+    });
+    });
+  
+    
+ 
+// };
 
 
 // function getData(track){ 

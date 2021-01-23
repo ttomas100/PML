@@ -95,5 +95,4 @@ event.preventDefault();
   $( "#preview-section" ).empty();
 });
 
-// function getSongs (){
-//   var queryURL= "https://api.deezer.com/track/" + here goes the get (Id) from the database; 
+
